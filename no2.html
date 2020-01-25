@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>validasi 
+  </title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+function validate(){
+  var Username = document.getElementById('username').value;
+  var Password = document.getElementById('password').value;
+  var usernameRGEX = /^[a-z][^:&~\s]{7,11}$/;
+  var passwordRGEX = /^(?=[^a-z]*[a-z])(?=\D*\d)[^:&.~\s]{9}$/;
+  var usernameResult = usernameRGEX.test(Username);
+  var passwordResult = passwordRGEX.test(PassWord);
+  alert("username:"+usernameResult + ", password: "+passwordResult);
+  
+if(usernameResult == false)
+  {
+    alert('Please enter a valid username ( -minimal 8 karakter dan maksimal 12- -huruf kecil semua- -spesial karakter hanya boleh titik(.) dan underscore (_)');
+    return false;
+  }
+
+  if(passwordResult == false)
+  {
+    alert('Please enter a valid password ( 9 digit karakter dengan kombinasi minimal 1 simbol dan 1 angka)');
+    return false;
+  }
+
+  return true;
+}
+</script>
+</body>
+</html>
